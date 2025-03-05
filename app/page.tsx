@@ -13,7 +13,7 @@ import Contact from "@/components/Contact";
 import StickyCursor from "@/components/StickyCursor";
 import Header from "@/components/Header";
 import { motion } from "framer-motion";
-import { slideUp, slideUpInterval, slideUpWordsInterval } from "@/lib/framer";
+import { slideUpWordsInterval } from "@/lib/framer";
 
 export default function Home() {
   const videoRef = useRef<HTMLDivElement | null>(null);
