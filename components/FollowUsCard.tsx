@@ -1,14 +1,27 @@
 import { ArrowUpRight } from "lucide-react";
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { clipPath } from "@/lib/framer";
+import { clipPath, slideUpInterval } from "@/lib/framer";
 
-const FollowUsCard = ({ id, title }: { id: number; title: string }) => {
+const FollowUsCard = ({
+  id,
+  title,
+  inView,
+}: {
+  id: number;
+  title: string;
+  inView: boolean;
+}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div
+    <motion.div
       key={id}
+      variants={slideUpInterval}
+      initial="initial"
+      animate={inView ? "animate" : "exit"}
+      custom={id * 0.25}
+      exit="exit"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="w-full h-40 border-b-[1px] border-gray-400/50 flex justify-between items-center"
@@ -48,7 +61,7 @@ const FollowUsCard = ({ id, title }: { id: number; title: string }) => {
           </React.Fragment>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };
 

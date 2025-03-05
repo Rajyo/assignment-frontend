@@ -1,16 +1,19 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { scale } from "@/lib/framer";
 
 const FlippingButton = ({
   fromColor,
   toColor,
   title,
   className,
+  inView
 }: {
   title: string;
   className?: string;
   fromColor?: string;
   toColor?: string;
+  inView?: boolean;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const handleButtonHover = () => {
@@ -28,6 +31,9 @@ const FlippingButton = ({
 
   return (
     <motion.div
+      variants={scale}
+      initial="initial"
+      animate={inView ? "animate" : "exit"}
       ref={ref}
       onMouseEnter={handleButtonHover}
       className={`relative overflow-hidden group z-10 w-fit rounded-full ${fromColor}`}

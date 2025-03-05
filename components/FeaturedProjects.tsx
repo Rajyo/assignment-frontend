@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { AnimateWordSlideUp } from "./ui/animation";
-import { useInView, motion } from "framer-motion";
+import { useInView, motion, AnimatePresence } from "framer-motion";
 import { scale } from "@/lib/framer";
 import { projectData } from "@/lib/data";
 import FeaturedProjectsCard from "./FeaturedProjectsCard";
@@ -18,12 +18,12 @@ const FeaturedProjects = () => {
     >
       <div className="flex flex-col text-[12rem]">
         <h1 className="flex flex-wrap tracking-tighter">
-          <AnimateWordSlideUp sentence="Featured" inView={inView} speed={1} />
+          <AnimateWordSlideUp sentence="Featured" inView={inView} speed={0.5} />
         </h1>
         <div className="flex gap-x-10">
           <motion.div
             variants={scale}
-            custom={2}
+            custom={1}
             initial="initial"
             animate={inView ? "animate" : "exit"}
           >
@@ -36,22 +36,30 @@ const FeaturedProjects = () => {
             ></video>
           </motion.div>
           <h1 className="flex flex-wrap -mt-28 italic tracking-tight font-extralight">
-            <AnimateWordSlideUp sentence="projects" inView={inView} speed={2} />
+            <AnimateWordSlideUp
+              sentence="projects"
+              inView={inView}
+              speed={1.5}
+            />
           </h1>
         </div>
       </div>
 
       <div className="w-[68vw] py-20 grid grid-cols-2 gap-20">
         <div className="flex flex-col justify-center">
-          {projectData.slice(0, 6).map((item) => (
-            <FeaturedProjectsCard key={item.id} {...item} />
-          ))}
+          <AnimatePresence>
+            {projectData.slice(0, 6).map((item) => (
+              <FeaturedProjectsCard key={item.id} {...item} />
+            ))}
+          </AnimatePresence>
         </div>
 
         <div className="flex flex-col justify-center">
+          <AnimatePresence>
           {projectData.slice(6, 11).map((item) => (
             <FeaturedProjectsCard key={item.id} {...item} />
           ))}
+          </AnimatePresence>
         </div>
       </div>
     </section>

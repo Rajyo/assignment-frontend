@@ -18,17 +18,17 @@ export const slideUp = {
 
 export const slideUpInterval = {
   initial: {
-    y: "10px",
+    y: "100px",
     opacity: 0,
   },
   animate: (i: number) => ({
     y: "0px",
     opacity: 1,
-    transition: { duration: 0.25, delay: i, easeIn },
+    transition: { duration: 0.5, delay: i, easeIn },
   }),
   exit: (i: number) => ({
     opacity: 0,
-    transition: { duration: 0.25, delay: 0.1 * i, easeOut },
+    transition: { duration: 0.5, delay: 0.1 * i, easeOut },
   }),
 };
 
@@ -68,6 +68,26 @@ export const slideUpWordsInterval = {
   },
 };
 
+export const slideUpLineInterval = {
+  initial: {
+    opacity: 0,
+    y: "100%",
+  },
+  animate: (i: number) => ({
+    opacity: 1,
+    y: "0",
+    transition: {
+      duration: 0.25,
+      delay: i * 0.04,
+      ease: [0.62, 0.05, 0.01, 0.99],
+    },
+  }),
+  exit: {
+    opacity: 0,
+    y: "100%",
+  },
+};
+
 export const scale = {
   initial: {
     scale: 0,
@@ -75,7 +95,7 @@ export const scale = {
   animate: (i: number) => ({
     scale: 1,
     transition: {
-      duration: 2,
+      duration: 1,
       delay: i * 0.06,
       ease: [0.62, 0.05, 0.01, 0.99],
     },

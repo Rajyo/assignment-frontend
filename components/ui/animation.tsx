@@ -1,6 +1,6 @@
 "use client";
 
-import { slideUpWordsInterval } from "@/lib/framer";
+import { slideUpLineInterval, slideUpWordsInterval } from "@/lib/framer";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { Dispatch, ReactNode, SetStateAction } from "react";
@@ -17,9 +17,36 @@ export const AnimateWordSlideUp = ({
   return (
     <p className="flex flex-wrap lg:gap-x-5 gap-x-2">
       {sentence.split(" ").map((x: string, index: number) => (
-        <span key={index} className="flex overflow-hidden relative justify-start pr-2">
+        <span key={index} className="flex overflow-hidden relative justify-start pr-6">
           <motion.span
             variants={slideUpWordsInterval}
+            custom={index + 1 * speed}
+            initial="initial"
+            animate={inView ? "animate" : "exit"}
+          >
+            {x}
+          </motion.span>
+        </span>
+      ))}
+    </p>
+  );
+};
+
+export const AnimateLineSlideUp = ({
+  sentence,
+  inView,
+  speed,
+}: {
+  sentence: string;
+  inView: boolean;
+  speed: number;
+}) => {
+  return (
+    <p className="flex flex-wrap gap-x-2">
+      {sentence.split(" ").map((x: string, index: number) => (
+        <span key={index} className="flex overflow-hidden relative justify-start pr-1">
+          <motion.span
+            variants={slideUpLineInterval}
             custom={index + 1 * speed}
             initial="initial"
             animate={inView ? "animate" : "exit"}

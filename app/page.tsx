@@ -12,6 +12,8 @@ import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
 import StickyCursor from "@/components/StickyCursor";
 import Header from "@/components/Header";
+import { motion } from "framer-motion";
+import { slideUp, slideUpInterval, slideUpWordsInterval } from "@/lib/framer";
 
 export default function Home() {
   const videoRef = useRef<HTMLDivElement | null>(null);
@@ -22,13 +24,19 @@ export default function Home() {
 
       <Intro />
 
-      <div ref={videoRef}>
+      <motion.div
+        variants={slideUpWordsInterval}
+        initial="initial"
+        animate="animate"
+        custom={1}
+        ref={videoRef}
+      >
         <video src="/videos/video.mp4" autoPlay loop muted />
         <StickyCursor
           stickyElement={videoRef as RefObject<HTMLDivElement>}
           title="play"
         />{" "}
-      </div>
+      </motion.div>
 
       <Description />
 

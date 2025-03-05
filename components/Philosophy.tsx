@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
-import { AnimateWordSlideUp } from "./ui/animation";
-import { useInView } from "framer-motion";
+import { AnimateLineSlideUp, AnimateWordSlideUp } from "./ui/animation";
+import { useInView, motion } from "framer-motion";
+import { scale } from "@/lib/framer";
 
 const Philosophy = () => {
   const container = useRef<HTMLDivElement>(null);
@@ -15,7 +16,7 @@ const Philosophy = () => {
     >
       <div className="flex flex-col text-[12rem]">
         <h1 className="flex flex-wrap tracking-tighter">
-          <AnimateWordSlideUp sentence="Our" inView={inView} speed={1} />
+          <AnimateWordSlideUp sentence="Our" inView={inView} speed={0.5} />
         </h1>
         <h1 className="flex flex-wrap -mt-28 italic tracking-tight font-extralight">
           <AnimateWordSlideUp sentence="philosophy" inView={inView} speed={2} />
@@ -23,27 +24,39 @@ const Philosophy = () => {
       </div>
 
       <div className="w-[80%] h-[60%] flex justify-center items-center">
-        <video
-          src="/videos/philosophy.mp4"
+        <motion.div
+          variants={scale}
+          initial="initial"
+          animate={inView ? "animate" : "exit"}
           className="w-1/2 h-full mr-20"
-          autoPlay
-          loop
-          muted
-        />
+        >
+          <video
+            src="/videos/philosophy.mp4"
+            className="w-full h-full"
+            autoPlay
+            loop
+            muted
+          />
+        </motion.div>
 
-        <p className="w-1/2 flex flex-col gap-10 text-3xl leading-snug tracking-tight max-w-[90%]">
-        <span>
-          In our team, developers work alongside designers, strategists and
-          analysts. Cuberto doesn&#39;t do cookie-cutter solutions and we build
-          products exactly as they were during the design phase, no short cuts
-          or simplifications.
-        </span>
-        <span>
-          We&#39;re driven by user‑centered design that drives productivity and
-          increases revenue. Our expertise and ingenuity are remarkable, yet we
-          always strive to outdo and outperform our previous achievements.
-        </span>
-        </p>
+        <div className="w-1/2 flex flex-col gap-10 text-3xl leading-snug tracking-tight max-w-[90%]">
+          <AnimateLineSlideUp
+            sentence="In our team, developers work alongside designers, strategists and
+            analysts. Cuberto doesn&#39;t do cookie-cutter solutions and we
+            build products exactly as they were during the design phase, no
+            short cuts or simplifications."
+            inView={inView}
+            speed={1}
+          />
+          <AnimateLineSlideUp
+            sentence="We&#39;re driven by user‑centered design that drives productivity
+            and increases revenue. Our expertise and ingenuity are remarkable,
+            yet we always strive to outdo and outperform our previous
+            achievements."
+            inView={inView}
+            speed={5}
+          />
+        </div>
       </div>
     </section>
   );
