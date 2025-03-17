@@ -17,10 +17,10 @@ const NewDayNewInspo = () => {
   return (
     <section ref={container} className="w-screen bg-white text-black min-h-screen flex flex-col">
       <InfiniteScroll>
-        <h1 className="text-[16rem] whitespace-nowrap tracking-tighter">
+        <h1 className="text-[16vw] whitespace-nowrap tracking-tighter">
           New Day --
         </h1>
-        <h1 className="text-[16rem] whitespace-nowrap tracking-tighter italic font-light">
+        <h1 className="text-[16vw] whitespace-nowrap tracking-tighter italic font-light">
           New Inspo
         </h1>
         <video
@@ -28,12 +28,12 @@ const NewDayNewInspo = () => {
           autoPlay
           loop
           muted
-          className="w-[15rem] h-fit rounded-full"
+          className="w-[15vw] h-fit rounded-full"
         />
-        <h1 className="text-[16rem] whitespace-nowrap tracking-tighter">
+        <h1 className="text-[16vw] whitespace-nowrap tracking-tighter">
           New Day --
         </h1>
-        <h1 className="text-[16rem] whitespace-nowrap tracking-tighter italic font-light">
+        <h1 className="text-[16vw] whitespace-nowrap tracking-tighter italic font-light">
           New Inspo
         </h1>
         <video
@@ -41,21 +41,21 @@ const NewDayNewInspo = () => {
           autoPlay
           loop
           muted
-          className="w-fit h-fit rounded-full"
+          className="w-[15vw] h-fit rounded-full"
         />
       </InfiniteScroll>
 
       <motion.div
         ref={scrollRef}
         drag="x"
-        dragConstraints={{ left: -2500, right: 0 }}
+        dragConstraints={container}
         dragElastic={0.1}
         dragMomentum={true}
         style={{ width: "max-content" }}
-        className="grid grid-flow-col gap-10 whitespace-nowrap pt-20 pb-60 overflow-x-scroll w-full scrollbar-hide cursor-grab active:cursor-grabbing pl-[9vw]"
+        className="grid grid-flow-col sm:gap-10 gap-5 whitespace-nowrap pt-20 pb-60 py-20 lg:px-28 md:px-20 sm:px-14 px-12 overflow-x-scroll w-full scrollbar-hide cursor-grab active:cursor-grabbing"
       >
         {newDayNewInspoData.map((item) => (
-          <motion.div variants={opacity} initial="initial" animate={inView ? "animate" : "exit"} key={item.id} className="flex flex-col gap-5 w-[24rem] group">
+          <motion.div variants={opacity} initial="initial" animate={inView ? "animate" : "exit"} key={item.id} className="flex flex-col gap-5 lg:w-[25vw] md:w-[40vw] sm:w-[50vw] w-[80vw] group">
             <Image
               src={item.image}
               alt={`image-${item.id}`}
@@ -63,7 +63,7 @@ const NewDayNewInspo = () => {
               height={100}
               unoptimized
               draggable={false}
-              className="w-fit h-fit rounded-3xl object-cover group-hover:scale-[0.98] transition-all duration-300 ease-in-out"
+              className="w-full h-fit rounded-3xl object-cover group-hover:scale-[0.98] transition-all duration-300 ease-in-out"
             />
             <p className="flex items-center gap-3 pl-2">
               <Volleyball className="w-5 h-5" />

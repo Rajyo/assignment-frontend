@@ -8,7 +8,7 @@ const Header = () => {
     <header className="flex justify-between items-center w-screen px-14 py-10 relative">
       <h1 className="text-3xl font-bold tracking-tight">cuberto</h1>
 
-      <span className="text-black text-2xl font-light tracking-tighter pr-24">
+      <span className="text-black text-2xl font-light tracking-tighter pr-24 sm:flex hidden">
         menu
       </span>
       <div className="fixed top-4 right-8 flex w-full justify-end p-[10px] cursor-pointer mix-blend-difference z-[1]">

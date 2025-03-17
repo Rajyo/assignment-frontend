@@ -24,15 +24,15 @@ const FollowUs = () => {
       className="w-screen bg-black text-white min-h-screen flex flex-col"
     >
       <InfiniteScroll>
-        <h1 className="text-[16rem] font-light whitespace-nowrap tracking-tighter">
+        <h1 className="text-[16vw] font-light whitespace-nowrap tracking-tighter">
           Follow Us
         </h1>
         <CircularFollowUsText />
-        <h1 className="text-[16rem] font-light whitespace-nowrap tracking-tighter">
+        <h1 className="text-[16vw] font-light whitespace-nowrap tracking-tighter">
           Follow Us
         </h1>
         <CircularFollowUsText />
-        <h1 className="text-[16rem] font-light whitespace-nowrap tracking-tighter">
+        <h1 className="text-[16vw] font-light whitespace-nowrap tracking-tighter">
           Follow Us
         </h1>
         <CircularFollowUsText />

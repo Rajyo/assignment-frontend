@@ -132,7 +132,9 @@ export default function StickyCursor({
         width: cursorSize,
         height: cursorSize,
       }}
-      className={`fixed z-50 bg-white rounded-full pointer-events-none mix-blend-difference ${isHovered && title === "" ? "w-[15px] h-[15px]" : ""}`}
+      className={`fixed z-50 bg-white rounded-full pointer-events-none mix-blend-difference ${
+        isHovered && title === "" ? "w-[15px] h-[15px]" : ""
+      }`}
       ref={cursor}
     >
       {isHovered && title !== "" ? (

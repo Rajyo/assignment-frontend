@@ -67,10 +67,10 @@ function InfiniteScroll({ children }: { children: ReactNode }) {
     <div className="relative w-full overflow-hidden py-28">
       <div ref={containerRef} className="w-full overflow-hidden">
         <motion.div
-          className="flex items-center gap-12 whitespace-nowrap"
+          className="flex items-center gap-[5vw] whitespace-nowrap"
           style={{ x }}
         >
-          <div className="flex items-center gap-12">{children}</div>
+          <div className="flex items-center gap-[5vw]">{children}</div>
         </motion.div>
       </div>
     </div>

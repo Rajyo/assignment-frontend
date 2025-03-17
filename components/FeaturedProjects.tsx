@@ -14,13 +14,13 @@ const FeaturedProjects = () => {
   return (
     <section
       ref={container}
-      className="w-[calc(100vw-9px)] min-h-screen bg-[#161616] text-white rounded-t-[5vw] pl-[9vw] pt-28 pb-60"
+      className="w-[calc(100vw-9px)] min-h-screen bg-[#161616] text-white rounded-t-[5vw] sm:pl-[9vw] pl-[5vw] pt-28 pb-60"
     >
-      <div className="flex flex-col text-[12rem]">
+      <div className="flex flex-col lg:text-[12rem] md:text-9xl sm:text-8xl min-[400px]:text-7xl min-[300px]:text-5xl">
         <h1 className="flex flex-wrap tracking-tighter">
           <AnimateWordSlideUp sentence="Featured" inView={inView} speed={0.5} />
         </h1>
-        <div className="flex gap-x-10">
+        <div className="flex sm:gap-x-10 gap-x-5 items-center">
           <motion.div
             variants={scale}
             custom={1}
@@ -28,15 +28,16 @@ const FeaturedProjects = () => {
             animate={inView ? "animate" : "exit"}
           >
             <video
-              className="w-[13.6vw] h-[10vw] -mt-6 rounded-full bg-red-200"
+              className="w-fit lg:h-[10rem] sm:h-[7rem] h-[15vw] rounded-full bg-red-200"
               src="/videos/projects.mp4"
               autoPlay
-              loop
+              loop  
               muted
             ></video>
           </motion.div>
-          <h1 className="flex flex-wrap -mt-28 italic tracking-tight font-extralight">
+          <h1 className="flex flex-wrap italic tracking-tight font-extralight">
             <AnimateWordSlideUp
+              className="pb-5"
               sentence="projects"
               inView={inView}
               speed={1.5}
@@ -45,7 +46,7 @@ const FeaturedProjects = () => {
         </div>
       </div>
 
-      <div className="w-[68vw] py-20 grid grid-cols-2 gap-20">
+      <div className="lg:w-[68vw] sm:pr-[9vw] pr-[5vw] lg:pr-0 py-20 grid sm:grid-cols-2 grid-cols-1 lg:gap-20 sm:gap-10 gap-6">
         <div className="flex flex-col justify-center">
           <AnimatePresence>
             {projectData.slice(0, 6).map((item) => (

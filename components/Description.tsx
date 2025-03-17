@@ -12,14 +12,14 @@ const Description = () => {
   return (
     <section
       ref={container}
-      className="w-screen h-screen flex justify-center items-center"
+      className="w-screen lg:h-screen py-20 lg:py-0 flex justify-center items-center"
     >
-      <div className="w-[80%] h-[60%] flex justify-center items-center">
+      <div className="sm:w-[80%] w-[90%] sm:h-[60%] h-full lg:flex justify-center items-center">
         <motion.div
           variants={scale}
           initial="initial"
           animate={inView ? "animate" : "exit"}
-          className="w-1/2 h-full mr-20"
+          className="w-1/2 h-full xl:mr-20 lg:flex hidden"
         >
           <video
             src="/videos/description.mp4"
@@ -30,18 +30,18 @@ const Description = () => {
           />
         </motion.div>
 
-        <div className="w-1/2 flex flex-col gap-10">
-          <p className="text-[40.32px] leading-tight tracking-tight mb-10 max-w-[90%]">
+        <div className="lg:w-1/2 flex flex-col gap-10">
+          <h1 className="lg:text-[2.5vw] min-[500px]:text-[5vw] text-2xl leading-tight tracking-tight mb-10 lg:max-w-[90%] flex flex-wrap">
             Cuberto is a leading digital product agency focused on branding,
             UI/UX design, mobile, and web development.
-          </p>
+          </h1>
 
           <FlippingButton
             inView={inView}
             fromColor="white"
             toColor="black"
             title="What we do"
-            className="text-4xl px-[10rem] py-[6rem] group-hover:text-white"
+            className="min-[500px]:text-4xl text-2xl xl:px-[10rem] xl:py-[6rem] lg:px-[8rem] lg:py-[4.5rem] sm:px-[10rem] sm:py-[6rem] min-[500px]:px-[20vw] min-[500px]:py-[15vw] px-[15vw] py-[10vw] group-hover:text-white"
           />
         </div>
       </div>

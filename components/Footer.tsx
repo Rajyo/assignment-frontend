@@ -1,12 +1,14 @@
-import React, { useRef } from "react";
+import React, { RefObject, useRef } from "react";
 import FlippingButton from "./ui/flipping-button";
 import { useInView } from "framer-motion";
+import StickyCursor from "./StickyCursor";
 
 const Footer = () => {
   const container = useRef<HTMLDivElement>(null);
   const inView = useInView(container, {
     margin: "100px 100px -50px -50px",
   });
+  const ref = useRef<HTMLDivElement | null>(null);
 
   return (
     <section ref={container} className="w-screen relative text-white">
@@ -42,11 +44,17 @@ const Footer = () => {
             className="text-xl px-8 py-3 uppercase group-hover:text-black"
           />
         </div>
-        <h1 className="absolute left-[50vw] bottom-14 text-2xl uppercase">
+        <h1
+          className="absolute left-[50vw] bottom-14 text-2xl uppercase"
+        >
           Privacy policy
         </h1>
-        <p></p>
+        <p ref={ref}></p>
       </div>
+      <StickyCursor
+        stickyElement={ref as RefObject<HTMLDivElement>}
+        title="Drag"
+      />
     </section>
   );
 };

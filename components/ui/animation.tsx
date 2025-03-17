@@ -9,15 +9,17 @@ export const AnimateWordSlideUp = ({
   sentence,
   inView,
   speed,
+  className
 }: {
   sentence: string;
   inView: boolean;
   speed: number;
+  className?: string;
 }) => {
   return (
     <p className="flex flex-wrap lg:gap-x-5 gap-x-2">
       {sentence.split(" ").map((x: string, index: number) => (
-        <span key={index} className="flex overflow-hidden relative justify-start pr-6">
+        <span key={index} className={`flex overflow-hidden relative justify-start 2xl:pr-6 xl:pr-5 lg:pr-4 pr-1 ${className}`}>
           <motion.span
             variants={slideUpWordsInterval}
             custom={index + 1 * speed}

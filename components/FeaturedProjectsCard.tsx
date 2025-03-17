@@ -63,7 +63,7 @@ const FeaturedProjectsCard = ({
           isVideoPlaying ? "hidden" : "block"
         }`}
       />
-      <h1 className="text-3xl max-w-[75%] tracking-tight">
+      <h1 className="xl:text-[1.5vw] lg:text-[2vw] sm:text-[2.5vw] text-[5vw] sm:max-w-[75%] max-w-[90%] tracking-tight">
         <span className="font-bold">{title}</span>{" "}
         <span className="px-2">-</span> {description}
       </h1>
