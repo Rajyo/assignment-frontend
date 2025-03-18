@@ -24,7 +24,7 @@ const FollowUsCard = ({
       exit="exit"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="w-full h-40 border-b-[1px] border-gray-400/50 flex justify-between items-center"
+      className="w-full 2xl:h-40 xl:h-36 lg:h-32 md:h-28 sm:h-24 h-20 border-b-[1px] border-gray-400/50 flex justify-between items-center"
     >
       <AnimatePresence mode="wait">
         {isHovered ? (
@@ -47,17 +47,17 @@ const FollowUsCard = ({
                   easings: "linear",
                   repeatType: "loop",
                 }}
-                className="whitespace-nowrap tracking-normal flex text-4xl items-center gap-10 h-full"
+                className="whitespace-nowrap tracking-normal flex 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg min-[400px]:text-base text-sm  items-center lg:gap-10 sm:gap-6 gap-4 h-full"
               >
                 <span>{title}</span>
-                <ArrowUpRight className="w-10 h-10 mr-10" />
+                <ArrowUpRight className="lg:w-10 lg:h-10 sm:w-8 sm:h-8 w-6 h-6 lg:mr-10 sm:mr-6 mr-4" />
               </motion.p>
             ))}
           </motion.div>
         ) : (
           <React.Fragment key="not-hovered">
-            <h1 className="text-4xl ml-28">{title}</h1>
-            <ArrowUpRight className="mr-28 w-14 h-14" />
+            <h1 className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg min-[400px]:text-base text-sm 2xl:ml-28 xl:ml-24 lg:ml-20 md:ml-16 sm:ml-12 ml-6">{title}</h1>
+            <ArrowUpRight className="2xl:mr-28 xl:mr-24 lg:mr-20 md:mr-16 sm:mr-12 mr-6 2xl:w-14 xl:w-11 lg:w-12 md:w-10 sm:w-8 2xl:h-14 xl:h-11 lg:h-12 md:h-10 sm:h-8" />
           </React.Fragment>
         )}
       </AnimatePresence>

@@ -93,6 +93,28 @@ body {
   }
 }
 
+.cross {
+  &::before,
+  &::after {
+    display: block;
+    content: "";
+    width: 30px;
+    height: 2px;
+    mix-blend-mode: difference;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

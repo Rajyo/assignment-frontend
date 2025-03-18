@@ -185,3 +185,45 @@ export const clipPath = {
     transition: { duration: 0.3, ease: "easeInOut" },
   },
 };
+
+export const slideSidebarTextOpacity = {
+  initial: {
+    opacity: 0,
+  },
+  animate: () => ({
+    opacity: 1,
+    transition: { duration: 0.25, delay: 0.2, easeIn },
+  }),
+  exit: () => ({
+    opacity: 0,
+    transition: { duration: 0.1, delay: 0, easeOut },
+  }),
+};
+
+export const slideSidebarOpacity = {
+  initial: {
+    opacity: 0,
+  },
+  animate: () => ({
+    opacity: 1,
+    transition: { duration: 0.75, delay: 0, easeIn },
+  }),
+  exit: () => ({
+    opacity: 0,
+    transition: { duration: 0.4, delay: 0, easeOut },
+  }),
+};
+
+export const slideSidebarLeft = {
+  initial: {
+    x: "50%",
+  },
+  animate: () => ({
+    x: "0%",
+    transition: { duration: 0.5, delay: 0, easeIn },
+  }),
+  exit: () => ({
+    x: "100%",
+    transition: { duration: 0.4, delay: 0, easeOut },
+  }),
+};

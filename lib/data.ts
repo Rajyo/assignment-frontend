@@ -193,3 +193,31 @@ export const followUsData = [
     link: 'https://twitter.com/cuberto'
   },
 ]
+
+export const navbarData = [
+  {
+    id: 1,
+    title: "What we do",
+    link: '/services'
+  },
+  {
+    id: 2,
+    title: "Projects",
+    link: '/projects'
+  },
+  {
+    id: 3,
+    title: "Company",
+    link: '/about'
+  },
+  {
+    id: 4,
+    title: "Tutorials",
+    link: '/tutorials'
+  },
+  {
+    id: 5,
+    title: "Contacts",
+    link: '/contacts'
+  }
+]

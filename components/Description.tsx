@@ -30,7 +30,7 @@ const Description = () => {
           />
         </motion.div>
 
-        <div className="lg:w-1/2 flex flex-col gap-10">
+        <div className="lg:w-1/2 flex flex-col sm:gap-10 gap-4 py-10 sm:py-0">
           <h1 className="lg:text-[2.5vw] min-[500px]:text-[5vw] text-2xl leading-tight tracking-tight mb-10 lg:max-w-[90%] flex flex-wrap">
             Cuberto is a leading digital product agency focused on branding,
             UI/UX design, mobile, and web development.

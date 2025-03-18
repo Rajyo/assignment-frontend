@@ -14,9 +14,9 @@ const FeaturedProjects = () => {
   return (
     <section
       ref={container}
-      className="w-[calc(100vw-9px)] min-h-screen bg-[#161616] text-white rounded-t-[5vw] sm:pl-[9vw] pl-[5vw] pt-28 pb-60"
+      className="sm:w-[calc(100vw-9px)] w-full min-h-screen bg-[#161616] text-white sm:rounded-t-[5vw] rounded-t-[10vw] sm:pl-[9vw] pl-[5vw] pt-28 pb-60"
     >
-      <div className="flex flex-col lg:text-[12rem] md:text-9xl sm:text-8xl min-[400px]:text-7xl min-[300px]:text-5xl">
+      <div className="flex flex-col lg:text-[12rem] md:text-9xl sm:text-8xl min-[400px]:text-7xl min-[300px]:text-5xl pb-10 sm:pb-0 -mt-5 sm:-mt-0">
         <h1 className="flex flex-wrap tracking-tighter">
           <AnimateWordSlideUp sentence="Featured" inView={inView} speed={0.5} />
         </h1>
@@ -46,7 +46,7 @@ const FeaturedProjects = () => {
         </div>
       </div>
 
-      <div className="lg:w-[68vw] sm:pr-[9vw] pr-[5vw] lg:pr-0 py-20 grid sm:grid-cols-2 grid-cols-1 lg:gap-20 sm:gap-10 gap-6">
+      <div className="lg:w-[68vw] sm:pr-[9vw] pr-[5vw] lg:pr-0 sm:py-20 grid sm:grid-cols-2 grid-cols-1 lg:gap-20 sm:gap-10">
         <div className="flex flex-col justify-center">
           <AnimatePresence>
             {projectData.slice(0, 6).map((item) => (

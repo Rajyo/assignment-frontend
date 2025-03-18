@@ -18,7 +18,7 @@ const Resources = () => {
   return (
     <section
       ref={container}
-      className="w-[calc(100vw-9px)] bg-[#161616] text-white rounded-t-[5vw] pl-[9vw] py-28 relative -mt-32"
+      className="sm:w-[calc(100vw-9px)] w-full bg-[#161616] text-white sm:rounded-t-[5vw] rounded-t-[10vw] pl-[9vw] sm:py-28 py-16 relative -mt-32"
     >
       <div className="flex flex-col xl:text-[11rem] lg:text-[10rem] md:text-[7rem] sm:text-[6rem] min-[500px]:text-[4.5rem] min-[400px]:text-[3.5rem] min-[350px]:text-[3rem] text-[2.75rem]">
         <h1 className="flex flex-wrap tracking-tighter">
@@ -65,7 +65,7 @@ const Resources = () => {
         ))}
       </motion.div>
 
-      <div className="flex w-full sm:pl-[45vw] py-20">
+      <div className="flex w-full sm:pl-[45vw] sm:py-20 pb-20">
         <div className="flex flex-col gap-10">
           <div className="2xl:text-[1.5vw] xl:text-[1.75vw] lg:text-[2vw] md:text-[2.25vw] sm:text-[2.5vw] text-[4vw] leading-tight lg:w-[30vw] sm:w-[35vw] w-[85vw]">
             <AnimateLineSlideUp

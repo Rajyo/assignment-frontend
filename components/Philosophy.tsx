@@ -12,7 +12,7 @@ const Philosophy = () => {
   return (
     <section
       ref={container}
-      className="w-[calc(100vw-9px)] bg-white text-black rounded-t-[5vw] pl-[9vw] py-28 relative -mt-32 mb-40 flex flex-col gap-10"
+      className="sm:w-[calc(100vw-9px)] w-full bg-white text-black sm:rounded-t-[5vw] rounded-t-[10vw] pl-[9vw] sm:py-28 py-16 relative -mt-32 mb-40 flex flex-col gap-10"
     >
       <div className="flex flex-col lg:text-[12rem] md:text-9xl sm:text-8xl text-7xl">
         <h1 className="flex flex-wrap tracking-tighter">

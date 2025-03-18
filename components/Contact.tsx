@@ -3,14 +3,7 @@ import { CircularContactText } from "./CircularText";
 
 const Contact = () => {
   return (
-    <div className="z-50">
-      {/* <Image
-        src="/contact.svg"
-        alt="contact"
-        width={100}
-        height={100}
-        className="fixed bottom-8 right-8 w-36 h-36 rotate-infinite"
-      /> */}
+    <div className="z-50 lg:flex hidden">
       <div className="fixed bottom-3 right-3">
         <CircularContactText />
       </div>

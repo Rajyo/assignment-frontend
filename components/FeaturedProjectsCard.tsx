@@ -40,7 +40,7 @@ const FeaturedProjectsCard = ({
       variants={slideUpInterval}
       initial="initial"
       animate={inView ? "animate" : "exit"}
-      className="grid gap-4 my-10 relative cursor-pointer"
+      className="grid sm:gap-4 gap-2 sm:my-10 my-6 relative cursor-pointer"
       onMouseEnter={videoHoverOnPlay}
       onMouseLeave={videoPause}
     >
@@ -65,7 +65,7 @@ const FeaturedProjectsCard = ({
       />
       <h1 className="xl:text-[1.5vw] lg:text-[2vw] sm:text-[2.5vw] text-[5vw] sm:max-w-[75%] max-w-[90%] tracking-tight">
         <span className="font-bold">{title}</span>{" "}
-        <span className="px-2">-</span> {description}
+        <span className="sm:px-2 px-1">-</span> {description}
       </h1>
 
       <StickyCursor

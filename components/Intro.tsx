@@ -42,7 +42,7 @@ const Intro = () => {
             muted
           ></video>
         </motion.div>
-        <div className="flex flex-wrap 2xl:gap-8 xl:gap-7 lg:gap-6 gap-4 2xl:-mt-9 lg:-mt-4 min-[500px]:-mt-3 -mt-1 tracking-tighter">
+        <div className="flex flex-wrap 2xl:gap-8 xl:gap-7 lg:gap-6 sm:gap-4 gap-2 2xl:-mt-9 lg:-mt-4 min-[500px]:-mt-3 -mt-1 tracking-tighter">
           <h1 className={`${robotoFlex.variable} italic font-extralight`}>
             <AnimateWordSlideUp sentence="design" inView={inView} speed={5} />
           </h1>

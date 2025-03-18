@@ -19,7 +19,7 @@ export default function Home() {
   const videoRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <main className="w-screen min-h-screen flex flex-col">
+    <main className="w-screen min-h-screen flex flex-col overflow-x-hidden">
       <Header />
 
       <Intro />
